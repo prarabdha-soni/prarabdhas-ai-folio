@@ -6,7 +6,7 @@ const ResumePane = () => {
       initial={{ x: 80, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full lg:w-[40%] bg-muted/10 flex flex-col border-l border-border"
+      className="w-full flex-1 bg-muted/30 flex flex-col border-l border-border"
     >
       {/* Header */}
       <div className="p-4 border-b border-border flex justify-between items-center font-mono text-[10px] uppercase tracking-wider text-muted-foreground">

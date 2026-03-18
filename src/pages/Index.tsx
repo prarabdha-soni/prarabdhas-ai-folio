@@ -48,7 +48,7 @@ const Index = () => {
         </motion.main>
 
         {/* Right Resume Pane - hidden on mobile */}
-        <div className="hidden lg:flex lg:w-[40%]">
+        <div className="hidden lg:flex lg:w-[55%]">
           <ResumePane />
         </div>
       </div>
