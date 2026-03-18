@@ -14,7 +14,7 @@ const Index = () => {
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-[60%] overflow-y-auto border-r border-border px-8 lg:px-12 py-16 lg:py-24 custom-scrollbar"
+          className="w-full lg:w-[45%] overflow-y-auto border-r border-border px-8 lg:px-12 py-16 lg:py-24 custom-scrollbar"
         >
           <div className="max-w-2xl">
             <HeroSection />
