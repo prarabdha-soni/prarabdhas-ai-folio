@@ -19,6 +19,7 @@ const Index = () => {
           <HeroSection />
 
           <div className="mt-24 space-y-24">
+            <TechnicalSkillsSection />
             <ExperienceSection />
             <SkillsSection />
             <ResumePane />
