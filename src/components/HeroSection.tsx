@@ -24,11 +24,22 @@ const HeroSection = () => {
         Prarabdha <br /> Soni
       </motion.h1>
 
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="mt-6"
+      >
+        <span className="text-4xl lg:text-5xl font-bold tracking-tight text-primary">
+          4+ Years of Experience
+        </span>
+      </motion.div>
+
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-xl"
+        className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-xl"
       >
         I design and deploy production-grade Generative AI systems that automate
         complex business workflows, enhance decision intelligence, and deliver measurable ROI.
