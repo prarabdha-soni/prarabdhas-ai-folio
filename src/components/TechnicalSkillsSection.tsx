@@ -1,18 +1,43 @@
 import { motion } from "framer-motion";
-import { Shield } from "lucide-react";
+import { Shield, Brain, Code2, Cloud, Database, Cpu } from "lucide-react";
 
-const technicalSkills = {
-  "Large Language Models": ["GPT-4o/4.5", "Claude 3/4", "Gemini 3", "LLaMA 3/4", "DeepSeek v3"],
-  "LLM Frameworks": ["LangChain", "LangGraph", "LlamaIndex", "AutoGen", "LangSmith", "PhiData", "n8n AI Agents"],
-  "Architectures": ["Agentic RAG", "Multi-Agent Systems", "Tool Calling", "Function Orchestration", "Prompt Engineering", "Fine-Tuning", "Evaluation Pipelines"],
-  "Vector & Retrieval": ["Pinecone", "Weaviate", "FAISS", "ChromaDB", "Qdrant", "Knowledge Graph Integration"],
-  "Applications": ["AI Copilots", "Enterprise Search", "Compliance Automation", "Intelligent Document Processing", "Conversational AI"],
-  "Languages & Frameworks": ["Java", "Python", "Node.js", "Spring Boot", "FastAPI", "Express.js"],
-  "AI / ML": ["TensorFlow", "XGBoost", "Scikit-Learn", "PyTorch", "GNNs"],
-  "Cloud & Infrastructure": ["AWS Lambda", "AWS Cognito", "Docker", "Apache Kafka", "Redis", "BullMQ"],
-  "Databases": ["PostgreSQL", "MySQL", "MongoDB"],
-  "Certifications": ["AWS ML Specialty", "AWS GenAI Specialist"],
-};
+const skillCategories = [
+  {
+    icon: Brain,
+    title: "LLM & GenAI",
+    items: ["GPT-4o/4.5", "Claude 3/4", "Gemini 3", "LLaMA 3/4", "DeepSeek v3"],
+  },
+  {
+    icon: Cpu,
+    title: "AI Frameworks",
+    items: ["LangChain", "LangGraph", "LlamaIndex", "AutoGen", "LangSmith", "PhiData", "n8n"],
+  },
+  {
+    icon: Code2,
+    title: "Architecture Patterns",
+    items: ["Agentic RAG", "Multi-Agent Systems", "Tool Calling", "Function Orchestration", "Fine-Tuning", "Eval Pipelines"],
+  },
+  {
+    icon: Database,
+    title: "Vector & Data",
+    items: ["Pinecone", "Weaviate", "FAISS", "ChromaDB", "Qdrant", "PostgreSQL", "MongoDB"],
+  },
+  {
+    icon: Code2,
+    title: "Languages & Backend",
+    items: ["Java", "Python", "Node.js", "Spring Boot", "FastAPI", "Express.js"],
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & Infra",
+    items: ["AWS Lambda", "Cognito", "Docker", "Kafka", "Redis", "BullMQ"],
+  },
+];
+
+const certifications = [
+  "AWS Certified ML Specialty",
+  "AWS Certified GenAI Specialist",
+];
 
 const TechnicalSkillsSection = () => {
   return (
@@ -21,41 +46,61 @@ const TechnicalSkillsSection = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-12"
+        className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-10"
       >
-        // Technical Skills
+        // Technical Stack
       </motion.h2>
 
-      <div className="space-y-6">
-        {Object.entries(technicalSkills).map(([category, items], idx) => (
-          <motion.div
-            key={category}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-              {category}
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {items.map((item) => (
-                <span
-                  key={item}
-                  className={`px-2.5 py-1 text-[11px] font-mono rounded-sm border transition-colors ${
-                    category === "Certifications"
-                      ? "bg-accent/10 text-accent border-accent/30 hover:bg-accent/20"
-                      : "bg-secondary text-secondary-foreground border-border hover:border-primary/40"
-                  }`}
-                >
-                  {category === "Certifications" && <Shield className="w-3 h-3 inline mr-1.5" strokeWidth={1} />}
-                  {item}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {skillCategories.map((cat, idx) => {
+          const Icon = cat.icon;
+          return (
+            <motion.div
+              key={cat.title}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.06, duration: 0.5 }}
+              className="p-4 rounded-xl glass-card"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">{cat.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {cat.items.map((item) => (
+                  <span
+                    key={item}
+                    className="px-2 py-1 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground border border-border hover:border-primary/30 transition-colors"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
+
+      {/* Certifications */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-4 p-4 rounded-xl glass-card flex items-center gap-4"
+      >
+        <Shield className="w-5 h-5 text-accent shrink-0" strokeWidth={1.5} />
+        <div className="flex flex-wrap gap-2">
+          {certifications.map((cert) => (
+            <span
+              key={cert}
+              className="px-3 py-1 text-[11px] font-mono rounded-md bg-accent/10 text-accent border border-accent/20"
+            >
+              {cert}
+            </span>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

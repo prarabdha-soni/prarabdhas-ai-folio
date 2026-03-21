@@ -1,42 +1,35 @@
 import { motion } from "framer-motion";
+import { Building2, Users, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "SaaS Product — Core Infrastructure",
+    role: "Senior Software Engineer (SDE-3)",
     company: "Arthmate (Omnifi)",
     period: "Oct 2023 – Present",
-    team: "Backend, team size – 8",
-    tech: "Java, Spring Boot, Kafka, Redis, AWS, PostgreSQL, MySQL, MongoDB",
+    scope: "Operational Systems Pod Lead · Team of 8",
     highlights: [
-      "Architected an advanced task manager leveraging recursive Apache Kafka event processing, automating mission-critical workflows such as loan disbursement.",
-      "Designed a factory-based runtime instantiation mechanism to dynamically retrieve and instantiate beans based on real-time conditions.",
+      "Spearheading operational systems pod, guiding backend team on architecture decisions for mission-critical fintech infrastructure",
+      "Architected recursive Kafka event-processing engine automating loan disbursement pipelines end-to-end",
+      "Designed factory-pattern runtime instantiation for dynamic bean resolution based on real-time conditions",
+      "Built real-time Credit Risk Model with XGBoost & LlamaIndex integrating CIBIL, CRIF, Experian scores",
+      "Engineered Credit Decisioning API (FastAPI + Lambda) — reduced loan approval time by 60%",
+      "Designed GNN-based Fraud Detection System analyzing borrower relationship graphs",
     ],
+    tech: ["Java", "Spring Boot", "Python", "FastAPI", "Kafka", "Redis", "XGBoost", "GNNs", "AWS Lambda", "PostgreSQL"],
   },
   {
-    title: "Credit Risk Modeling",
-    company: "Arthmate (Omnifi)",
-    period: "Feb 2024 – Present",
-    team: "Risk team size – 7",
-    tech: "Python, XGBoost, Scikit-Learn, FastAPI, AWS Lambda, GNNs, TensorFlow, LlamaIndex",
-    highlights: [
-      "Developed a real-time Credit Risk Model using XGBoost & LlamaIndex, integrating CIBIL, CRIF, and Experian credit scores for loan default prediction.",
-      "Built a Credit Decisioning API with FastAPI and AWS Lambda, reducing loan approval time by 60%.",
-      "Designed an AI-driven Fraud Detection System leveraging Graph Neural Networks to analyze borrower relationships.",
-    ],
-  },
-  {
-    title: "LMS/LOS Origin Product",
+    role: "Software Engineer (SDE-2 → SDE-3)",
     company: "Arthmate",
     period: "Feb 2022 – Oct 2023",
-    team: "Backend, team size – 15",
-    tech: "Java, Spring Boot, Node.js, Express.js, MongoDB, MySQL, Docker, Redis, BullMQ",
+    scope: "Backend Engineering · Team of 15",
     highlights: [
-      "Enhanced MSME financial systems with validator microservice ensuring loan application compliance.",
-      "Integrated BBPS using serverless architecture with Cognito ID for secure real-time EMI calculations.",
-      "Developed secure banking integrations with Axis, ICICI, RBL and credit bureaus (CIBIL, CRIF).",
-      "Engineered co-lending platform with dynamic co-lender selection via AI scoring.",
-      "Designed E-NACH and E-Sign authorization systems with Aadhaar-based UIDAI authentication.",
+      "Enhanced MSME financial systems with validator microservice ensuring loan application compliance",
+      "Integrated BBPS via serverless architecture with Cognito ID for secure real-time EMI calculations",
+      "Developed multi-bank integrations (Axis, ICICI, RBL) and credit bureau connectors (CIBIL, CRIF)",
+      "Engineered co-lending platform with AI-powered dynamic co-lender selection and scoring",
+      "Designed E-NACH & E-Sign authorization with Aadhaar-based UIDAI authentication",
     ],
+    tech: ["Java", "Spring Boot", "Node.js", "Express.js", "MongoDB", "MySQL", "Docker", "Redis", "BullMQ"],
   },
 ];
 
@@ -47,51 +40,86 @@ const ExperienceSection = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-12"
+        className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-10"
       >
-        // Work Experience
+        // Professional Experience
       </motion.h2>
 
-      <div className="space-y-16">
+      <div className="space-y-6">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="border-t border-border pt-8"
+            transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-xl glass-card overflow-hidden"
           >
-            <div className="flex items-start justify-between gap-4 mb-1">
-              <h3 className="text-lg font-semibold tracking-tight">{exp.title}</h3>
-              <span className="font-mono text-xs text-muted-foreground tabular-nums whitespace-nowrap">
-                {exp.period}
-              </span>
+            {/* Header */}
+            <div className="p-5 pb-4 border-b border-border/50">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-base font-bold text-foreground">{exp.role}</h3>
+                  <div className="flex flex-wrap items-center gap-3 mt-1.5 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-1.5">
+                      <Building2 className="w-3.5 h-3.5" strokeWidth={1.5} />
+                      {exp.company}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" strokeWidth={1.5} />
+                      {exp.period}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Users className="w-3.5 h-3.5" strokeWidth={1.5} />
+                      {exp.scope}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">{exp.company}</p>
-            <p className="font-mono text-[10px] text-muted-foreground mt-1">{exp.team}</p>
 
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              {exp.tech.split(", ").map((t) => (
-                <span
-                  key={t}
-                  className="px-2 py-0.5 text-[10px] font-mono rounded-sm bg-secondary text-secondary-foreground border border-border"
-                >
-                  {t}
-                </span>
-              ))}
+            {/* Highlights */}
+            <div className="p-5 pt-4">
+              <ul className="space-y-2.5">
+                {exp.highlights.map((h, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 shrink-0" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-1.5 mt-5 pt-4 border-t border-border/30">
+                {exp.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-
-            <ul className="mt-6 space-y-3">
-              {exp.highlights.map((h, i) => (
-                <li key={i} className="text-sm text-muted-foreground leading-relaxed pl-4 border-l border-border">
-                  {h}
-                </li>
-              ))}
-            </ul>
           </motion.div>
         ))}
       </div>
+
+      {/* Education */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-6 p-5 rounded-xl glass-card"
+      >
+        <h3 className="text-xs font-mono uppercase tracking-wider text-primary mb-2">Education</h3>
+        <div className="flex justify-between items-center">
+          <div>
+            <p className="text-sm font-semibold text-foreground">B.Tech in Computer Science & Engineering</p>
+            <p className="text-sm text-muted-foreground">IIT Guwahati</p>
+          </div>
+          <span className="text-xs font-mono text-muted-foreground">2021</span>
+        </div>
+      </motion.div>
     </section>
   );
 };
