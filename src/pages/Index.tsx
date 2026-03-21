@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import TechnicalSkillsSection from "@/components/TechnicalSkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import ResumePane from "@/components/ResumePane";
+
 import StatusBar from "@/components/StatusBar";
 
 const Index = () => {
@@ -20,7 +20,7 @@ const Index = () => {
           <div className="mt-24 space-y-24">
             <TechnicalSkillsSection />
             <ExperienceSection />
-            <ResumePane />
+            
 
             {/* Contact */}
             <section className="pb-16">
