@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Shield } from "lucide-react";
 
 const technicalSkills = {
   "Large Language Models": ["GPT-4o/4.5", "Claude 3/4", "Gemini 3", "LLaMA 3/4", "DeepSeek v3"],
@@ -6,6 +7,11 @@ const technicalSkills = {
   "Architectures": ["Agentic RAG", "Multi-Agent Systems", "Tool Calling", "Function Orchestration", "Prompt Engineering", "Fine-Tuning", "Evaluation Pipelines"],
   "Vector & Retrieval": ["Pinecone", "Weaviate", "FAISS", "ChromaDB", "Qdrant", "Knowledge Graph Integration"],
   "Applications": ["AI Copilots", "Enterprise Search", "Compliance Automation", "Intelligent Document Processing", "Conversational AI"],
+  "Languages & Frameworks": ["Java", "Python", "Node.js", "Spring Boot", "FastAPI", "Express.js"],
+  "AI / ML": ["TensorFlow", "XGBoost", "Scikit-Learn", "PyTorch", "GNNs"],
+  "Cloud & Infrastructure": ["AWS Lambda", "AWS Cognito", "Docker", "Apache Kafka", "Redis", "BullMQ"],
+  "Databases": ["PostgreSQL", "MySQL", "MongoDB"],
+  "Certifications": ["AWS ML Specialty", "AWS GenAI Specialist"],
 };
 
 const TechnicalSkillsSection = () => {
@@ -17,7 +23,7 @@ const TechnicalSkillsSection = () => {
         viewport={{ once: true }}
         className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-12"
       >
-        // AI Engineering & LLM Systems
+        // Technical Skills
       </motion.h2>
 
       <div className="space-y-6">
@@ -36,8 +42,13 @@ const TechnicalSkillsSection = () => {
               {items.map((item) => (
                 <span
                   key={item}
-                  className="px-2.5 py-1 text-[11px] font-mono rounded-sm border border-border bg-secondary text-secondary-foreground hover:border-primary/40 transition-colors"
+                  className={`px-2.5 py-1 text-[11px] font-mono rounded-sm border transition-colors ${
+                    category === "Certifications"
+                      ? "bg-accent/10 text-accent border-accent/30 hover:bg-accent/20"
+                      : "bg-secondary text-secondary-foreground border-border hover:border-primary/40"
+                  }`}
                 >
+                  {category === "Certifications" && <Shield className="w-3 h-3 inline mr-1.5" strokeWidth={1} />}
                   {item}
                 </span>
               ))}
