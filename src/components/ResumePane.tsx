@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 
 const ResumePane = () => {
   return (
-    <motion.aside
-      initial={{ x: 80, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full flex-1 bg-muted/30 flex flex-col border-l border-border"
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="border border-border rounded-sm bg-muted/30"
     >
       {/* Header */}
       <div className="p-4 border-b border-border flex justify-between items-center font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
@@ -18,41 +19,17 @@ const ResumePane = () => {
       </div>
 
       {/* Resume Content */}
-      <div className="flex-1 overflow-y-auto p-6 lg:p-8 font-mono custom-scrollbar">
+      <div className="p-6 lg:p-8 font-mono">
         <ResumeHeader />
         <ResumeSection title="EDUCATION">
-          <ResumeEntry
-            title="B.Tech in CSE"
-            subtitle="IIT Guwahati"
-            date="Sep 2021"
-          />
+          <ResumeEntry title="B.Tech in CSE" subtitle="IIT Guwahati" date="Sep 2021" />
         </ResumeSection>
 
         <ResumeSection title="EXPERIENCE">
-          <ResumeEntry
-            title="Senior Software Engineer (SDE-3)"
-            subtitle="Arthmate (Omnifi)"
-            date="Oct 2023 – Present"
-            description="Spearheading operational systems pod, guiding backend team of 5. Leading integration projects for BBPS, E-NACH, E-SIGN."
-          />
-          <ResumeEntry
-            title="SaaS Product — Core Infrastructure"
-            subtitle="Arthmate (Omnifi)"
-            date="Oct 2023 – Present"
-            description="Architected task manager with recursive Kafka processing. Factory design pattern for runtime bean instantiation."
-          />
-          <ResumeEntry
-            title="Credit Risk Modeling"
-            subtitle="Arthmate (Omnifi)"
-            date="Feb 2024 – Present"
-            description="Real-time Credit Risk Model with XGBoost & LlamaIndex. Credit Decisioning API reducing approval time by 60%. AI-driven Fraud Detection with GNNs."
-          />
-          <ResumeEntry
-            title="LMS/LOS Origin Product"
-            subtitle="Arthmate"
-            date="Feb 2022 – Oct 2023"
-            description="MSME financial optimization, BBPS integration, banking integrations with Axis/ICICI/RBL, co-lending platform, E-NACH & E-Sign systems."
-          />
+          <ResumeEntry title="Senior Software Engineer (SDE-3)" subtitle="Arthmate (Omnifi)" date="Oct 2023 – Present" description="Spearheading operational systems pod, guiding backend team of 5. Leading integration projects for BBPS, E-NACH, E-SIGN." />
+          <ResumeEntry title="SaaS Product — Core Infrastructure" subtitle="Arthmate (Omnifi)" date="Oct 2023 – Present" description="Architected task manager with recursive Kafka processing. Factory design pattern for runtime bean instantiation." />
+          <ResumeEntry title="Credit Risk Modeling" subtitle="Arthmate (Omnifi)" date="Feb 2024 – Present" description="Real-time Credit Risk Model with XGBoost & LlamaIndex. Credit Decisioning API reducing approval time by 60%. AI-driven Fraud Detection with GNNs." />
+          <ResumeEntry title="LMS/LOS Origin Product" subtitle="Arthmate" date="Feb 2022 – Oct 2023" description="MSME financial optimization, BBPS integration, banking integrations with Axis/ICICI/RBL, co-lending platform, E-NACH & E-Sign systems." />
         </ResumeSection>
 
         <ResumeSection title="TECHNICAL SKILLS">
@@ -86,7 +63,7 @@ const ResumePane = () => {
           </div>
         </ResumeSection>
       </div>
-    </motion.aside>
+    </motion.section>
   );
 };
 
@@ -100,24 +77,12 @@ const ResumeHeader = () => (
 
 const ResumeSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mb-8">
-    <h3 className="text-[10px] uppercase tracking-[0.3em] text-primary mb-4 pb-1 border-b border-border/50">
-      {title}
-    </h3>
+    <h3 className="text-[10px] uppercase tracking-[0.3em] text-primary mb-4 pb-1 border-b border-border/50">{title}</h3>
     {children}
   </div>
 );
 
-const ResumeEntry = ({
-  title,
-  subtitle,
-  date,
-  description,
-}: {
-  title: string;
-  subtitle: string;
-  date: string;
-  description?: string;
-}) => (
+const ResumeEntry = ({ title, subtitle, date, description }: { title: string; subtitle: string; date: string; description?: string }) => (
   <div className="mb-4">
     <div className="flex justify-between items-start gap-2">
       <div>
@@ -126,9 +91,7 @@ const ResumeEntry = ({
       </div>
       <span className="text-[10px] tabular-nums text-muted-foreground whitespace-nowrap">{date}</span>
     </div>
-    {description && (
-      <p className="text-[10px] text-muted-foreground mt-1.5 leading-relaxed">{description}</p>
-    )}
+    {description && <p className="text-[10px] text-muted-foreground mt-1.5 leading-relaxed">{description}</p>}
   </div>
 );
 
