@@ -30,9 +30,8 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-xl"
       >
-        Leading digital transformation through cutting-edge AI, Machine Learning,
-        and Generative AI solutions. Specializing in enterprise-scale LLMs, RAG systems,
-        and autonomous AI architectures that deliver measurable ROI.
+        I design and deploy production-grade Generative AI systems that automate
+        complex business workflows, enhance decision intelligence, and deliver measurable ROI.
       </motion.p>
 
       <motion.div
