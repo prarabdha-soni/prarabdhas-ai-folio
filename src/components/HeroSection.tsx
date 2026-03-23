@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Phone, Github, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, Phone, Github, ArrowRight, Download } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -95,6 +95,14 @@ const HeroSection = () => {
         >
           <Phone className="w-4 h-4" />
           +91-8118898113
+        </a>
+        <a
+          href="/Prarabdha_Resume.pdf"
+          download
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-accent-foreground text-sm font-medium hover:bg-accent/90 transition-colors"
+        >
+          <Download className="w-4 h-4" />
+          Download Resume
         </a>
       </motion.div>
     </section>
