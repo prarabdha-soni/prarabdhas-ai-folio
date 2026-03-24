@@ -73,7 +73,7 @@ const HeroSection = () => {
         className="mt-8 flex flex-wrap gap-3"
       >
         <a
-          href="https://mail.google.com/mail/?view=cm&to=prarabdha21@gmail.com"
+          href="mailto:prarabdha21@gmail.com"
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
