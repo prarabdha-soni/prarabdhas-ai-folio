@@ -20,24 +20,6 @@ const Index = () => {
           <ArchitectureSection />
           <ExperienceSection />
 
-          {/* CTA */}
-          <motion.section
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="pb-12 text-center"
-          >
-            <h2 className="text-2xl font-bold text-foreground mb-2">Let's Build Something Intelligent</h2>
-            <p className="text-sm text-muted-foreground mb-6">
-              Looking for an AI architect to design your next production pipeline?
-            </p>
-            <a
-              href="mailto:prarabdha21@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-            >
-              Start a Conversation →
-            </a>
-          </motion.section>
         </div>
       </motion.main>
 
