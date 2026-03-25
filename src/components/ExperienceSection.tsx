@@ -14,6 +14,7 @@ const experiences = [
       "Built real-time Credit Risk Model with XGBoost & LlamaIndex integrating CIBIL, CRIF, Experian scores",
       "Engineered Credit Decisioning API (FastAPI + Lambda) — reduced loan approval time by 60%",
       "Designed GNN-based Fraud Detection System analyzing borrower relationship graphs",
+      "Led migration of EC2-hosted Spring scheduled jobs to AWS ECS Fargate, redesigning the system from cron-based execution to demand-driven architecture, improving scalability, reducing idle compute costs, and enhancing operational reliability",
     ],
     tech: ["Java", "Spring Boot", "Python", "FastAPI", "Kafka", "Redis", "XGBoost", "GNNs", "AWS Lambda", "PostgreSQL"],
   },
