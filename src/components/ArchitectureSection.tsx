@@ -90,7 +90,7 @@ const ArchitectureSection = () => {
                     {pipeline.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground"
+                        className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                       >
                         {tech}
                       </span>
