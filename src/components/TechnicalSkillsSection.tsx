@@ -71,7 +71,7 @@ const TechnicalSkillsSection = () => {
                 {cat.items.map((item) => (
                   <span
                     key={item}
-                    className="px-2 py-1 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground border border-border hover:border-primary/30 transition-colors"
+                    className="px-2 py-1 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground border border-border hover:border-primary/50 hover:bg-primary/10 hover:text-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                   >
                     {item}
                   </span>
