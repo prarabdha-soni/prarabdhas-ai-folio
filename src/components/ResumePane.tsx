@@ -26,10 +26,10 @@ const ResumePane = () => {
         </ResumeSection>
 
         <ResumeSection title="EXPERIENCE">
-          <ResumeEntry title="Senior Software Engineer (SDE-3)" subtitle="Arthmate (Omnifi)" date="Oct 2023 – Present" description="Spearheading operational systems pod, guiding backend team of 5. Leading integration projects for BBPS, E-NACH, E-SIGN." />
-          <ResumeEntry title="SaaS Product — Core Infrastructure" subtitle="Arthmate (Omnifi)" date="Oct 2023 – Present" description="Architected task manager with recursive Kafka processing. Factory design pattern for runtime bean instantiation." />
-          <ResumeEntry title="Credit Risk Modeling" subtitle="Arthmate (Omnifi)" date="Feb 2024 – Present" description="Real-time Credit Risk Model with XGBoost & LlamaIndex. Credit Decisioning API reducing approval time by 60%. AI-driven Fraud Detection with GNNs." />
-          <ResumeEntry title="LMS/LOS Origin Product" subtitle="Arthmate" date="Feb 2022 – Oct 2023" description="MSME financial optimization, BBPS integration, banking integrations with Axis/ICICI/RBL, co-lending platform, E-NACH & E-Sign systems." />
+          <ResumeEntry title="Senior Software Engineer (SDE-3)" subtitle="Arthmate (Omnifi)" date="Oct 2023 – Present" description="Led backend team of 5, owning architecture for mission-critical lending workflows. Drove end-to-end integration of BBPS, E-NACH, eSign." />
+          <ResumeEntry title="SaaS Product — Core Infrastructure" subtitle="Arthmate (Omnifi)" date="Oct 2023 – Feb 2024" description="Architected task manager with recursive Kafka processing. Dynamic runtime execution framework for condition-based service resolution." />
+          <ResumeEntry title="Credit Risk Modeling" subtitle="Arthmate (Omnifi)" date="Feb 2024 – Jul 2024" description="Real-time Credit Risk Model with XGBoost & LlamaIndex. Credit Decisioning API reducing approval time by 60%. GNN-based Fraud Detection System." />
+          <ResumeEntry title="LMS/LOS Origin Product" subtitle="Arthmate" date="Feb 2022 – Present" description="EC2→ECS Fargate migration, MSME validation system, BBPS serverless integration, multi-bank integrations, co-lending platform, E-NACH & E-Sign systems." />
         </ResumeSection>
 
         <ResumeSection title="TECHNICAL SKILLS">

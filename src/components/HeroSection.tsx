@@ -32,7 +32,7 @@ const HeroSection = () => {
       >
         <span className="text-lg font-semibold text-foreground">Enterprise AI Solutions Architect</span>
         <span className="text-muted-foreground">·</span>
-        <span className="text-lg font-medium gradient-text">4+ Years Building Production AI</span>
+        <span className="text-lg font-medium gradient-text">4+ Years in Backend & AI Engineering</span>
       </motion.div>
 
       <motion.p
