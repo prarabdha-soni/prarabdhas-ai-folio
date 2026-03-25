@@ -61,7 +61,7 @@ const TechnicalSkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06, duration: 0.5 }}
-              className="p-4 rounded-xl glass-card"
+              className="p-4 rounded-xl glass-card hover:glow-primary hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-3">
                 <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
