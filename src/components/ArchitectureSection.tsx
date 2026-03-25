@@ -73,7 +73,7 @@ const ArchitectureSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="group p-5 rounded-xl glass-card hover:glow-primary transition-all duration-300 cursor-default"
+              className="group p-5 rounded-xl glass-card hover:glow-primary hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 cursor-default"
             >
               <div className="flex items-start gap-3">
                 <div className={`p-2 rounded-lg bg-primary/10 ${pipeline.color} shrink-0`}>
@@ -90,7 +90,7 @@ const ArchitectureSection = () => {
                     {pipeline.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground"
+                        className="px-2 py-0.5 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                       >
                         {tech}
                       </span>

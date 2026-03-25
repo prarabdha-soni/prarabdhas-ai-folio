@@ -61,7 +61,7 @@ const TechnicalSkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06, duration: 0.5 }}
-              className="p-4 rounded-xl glass-card"
+              className="p-4 rounded-xl glass-card hover:glow-primary hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-3">
                 <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
@@ -71,7 +71,7 @@ const TechnicalSkillsSection = () => {
                 {cat.items.map((item) => (
                   <span
                     key={item}
-                    className="px-2 py-1 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground border border-border hover:border-primary/30 transition-colors"
+                    className="px-2 py-1 text-[10px] font-mono rounded-md bg-secondary text-secondary-foreground border border-border hover:border-primary/50 hover:bg-primary/10 hover:text-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                   >
                     {item}
                   </span>
